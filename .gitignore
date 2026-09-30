@@ -1,0 +1,11 @@
+# Visual Studio / IDE 缓存
+.vs/
+.vscode/
+.idea/
+
+# 系统文件
+Thumbs.db
+Desktop.ini
+
+# 日志
+*.log

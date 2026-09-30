@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DCS 智能体</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- 工号建档（测试期身份入口） -->
+  <div id="loginView" class="login-view" hidden>
+    <div class="login-card">
+      <h1 class="login-title">DCS 智能体 <span class="beta">Beta</span></h1>
+      <p class="login-sub">请输入你的 DCS 工号开始使用</p>
+      <input id="codeInput" class="login-input" type="text" placeholder="工号，例如 31008589"
+             autocomplete="off" maxlength="20">
+      <button id="loginBtn" class="login-btn">进入</button>
+      <p id="loginError" class="login-error" hidden></p>
+      <p class="login-note">当前为测试环境 · 仅支持在职员工</p>
+    </div>
+  </div>
+
+  <!-- 主界面 -->
+  <div id="appView" class="app" hidden>
+    <aside class="sidebar">
+      <div class="brand">DCS 智能体 <span class="beta">Beta</span></div>
+      <button id="newChatBtn" class="new-chat">+ 开启新会话</button>
+      <div id="convList" class="conv-list"></div>
+      <div class="identity" id="identityBox"></div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <span id="convTitle" class="topbar-title">新会话</span>
+        <span class="status"><i class="status-dot"></i>已连接 DCS 数据库</span>
+      </header>
+
+      <main class="chat">
+        <div id="messages" class="messages"></div>
+        <div id="readonlyBar" class="readonly-bar" hidden>历史会话仅支持回看，点击左侧「开启新会话」继续提问</div>
+
+        <div class="composer-wrap">
+          <div class="composer">
+            <textarea id="input" rows="1" placeholder="向 DCS 智能体提问…"></textarea>
+            <div class="composer-bar">
+              <span class="plus" title="能力入口（即将上线）">+</span>
+              <button id="sendBtn" class="send" title="发送">↑</button>
+            </div>
+          </div>
+          <p class="footnote">当前为测试环境 · 回答基于 DCS 真实数据与源码证据生成</p>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
