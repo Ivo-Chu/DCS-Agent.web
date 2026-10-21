@@ -1,0 +1,35 @@
+* { box-sizing: border-box; }
+html, body, #root { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body {
+  font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+  color: #1f2937;
+  background: #f5f7fb;
+}
+.app { display: flex; flex-direction: column; width: 100%; height: 100%; min-width: 0; min-height: 0; overflow: hidden; }
+.header { flex-shrink: 0; display: flex; align-items: center; gap: 10px; padding: 12px 14px; color: white; background: #165DFF; }
+.header-title { font-size: 16px; font-weight: 600; }
+.header-user { margin-left: auto; font-size: 12px; opacity: .9; text-align: right; }
+.state { display: flex; align-items: center; justify-content: center; height: 100%; padding: 24px; color: #64748b; text-align: center; }
+.error { color: #d92d20; }
+.thread { flex: 1; min-height: 0; min-width: 0; overflow: hidden; }
+.thread-viewport { display: flex; flex-direction: column; gap: 12px; height: 100%; overflow-y: auto; overflow-x: hidden; padding: 12px 14px; }
+.message { display: flex; flex-direction: column; max-width: 90%; min-width: 0; flex-shrink: 0; }
+.message.user { align-self: flex-end; align-items: flex-end; }
+.message.assistant { align-self: flex-start; align-items: flex-start; }
+.bubble { max-width: 100%; min-width: 0; overflow-wrap: anywhere; padding: 9px 12px; border-radius: 12px; font-size: 14px; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+.message.user .bubble { color: white; background: #165DFF; border-bottom-right-radius: 4px; }
+.message.assistant .bubble { color: #1f2937; background: white; border: 1px solid #e2e8f0; border-bottom-left-radius: 4px; }
+.composer { flex-shrink: 0; display: flex; gap: 8px; padding: 10px; border-top: 1px solid #e2e8f0; background: white; }
+.composer-input { flex: 1; min-width: 0; min-height: 38px; max-height: 120px; resize: none; padding: 9px 11px; font: inherit; border: 1px solid #cbd5e1; border-radius: 8px; outline: none; }
+.composer-input:focus { border-color: #165DFF; box-shadow: 0 0 0 2px rgba(22,93,255,.12); }
+.composer-send { padding: 0 16px; color: white; background: #165DFF; border: 0; border-radius: 8px; cursor: pointer; }
+.composer-send:disabled { background: #94a3b8; cursor: not-allowed; }
+.tool-panel { flex-shrink: 0; max-height: 96px; overflow: auto; display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 10px; background: white; border-top: 1px solid #e2e8f0; }
+.tool-badge { padding: 3px 8px; border-radius: 999px; font-size: 12px; background: #eef2ff; color: #475569; }
+.tool-badge.running { background: #dbeafe; color: #1d4ed8; }
+.tool-badge.success { background: #dcfce7; color: #15803d; }
+.tool-badge.error { background: #fee2e2; color: #b91c1c; }
+
+.bubble p { margin: 0; white-space: pre-wrap !important; overflow-wrap: anywhere; }
+.bubble pre { max-width: 100%; overflow-x: auto; }
+.header-user { overflow-wrap: anywhere; }
